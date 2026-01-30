@@ -6,6 +6,8 @@ from .models import User
 from .serializers import UserSerializer
 from .permissions import IsAdmin
 
+
+
 class UserListCreateView(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -22,4 +24,6 @@ class PatientListView(generics.ListAPIView):
     queryset = PatientProfile.objects.all()
     serializer_class = PatientProfileSerializer
     permission_classes = [IsAuthenticated, IsAdmin]    
+
+
 
